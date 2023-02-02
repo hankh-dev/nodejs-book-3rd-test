@@ -56,6 +56,8 @@ app.post('/upload', upload.single('image'), (req, res) => {
 
 app.get('/', (req, res, next) => {
   console.log('GET / 요청에서만 실행됩니다.');
+  console.log('req.body:',req.body);
+  console.log('req.query:',req.query);
   next();
 }, (req, res) => {
   throw new Error('에러는 에러 처리 미들웨어로 갑니다.')
